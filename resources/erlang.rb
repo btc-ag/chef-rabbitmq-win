@@ -8,11 +8,11 @@ action :install do
   erl_major = major - 11
 
   source_url = if property_is_set?(:source)
-                  new_resource.source
-                else
-                  "http://erlang.org/download/otp_win64_#{new_resource.version}.exe"
-                end
-                
+                 new_resource.source
+               else
+                 "http://erlang.org/download/otp_win64_#{new_resource.version}.exe"
+               end
+
   windows_package "Erlang OTP #{major} (#{erl_major}.#{minor})" do
     source source_url
     installer_type :custom

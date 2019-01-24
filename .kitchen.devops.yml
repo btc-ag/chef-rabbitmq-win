@@ -9,11 +9,11 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: windows2016-rabbitmq
+  - name: windows2016
     driver:
       image_urn: MicrosoftWindowsServer:WindowsServer:2016-Datacenter-smalldisk:latest
-      azure_resource_group_prefix: chef-kitchen
+      azure_resource_group_prefix: chef-kitchen-
 suites:
-  - name: default
+  - name: rabbitmq
     run_list:
       - recipe[rabbitmq-win]
