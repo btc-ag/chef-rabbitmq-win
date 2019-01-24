@@ -1,0 +1,24 @@
+---
+driver:
+  name: azurerm
+  subscription_id: '5c691912-139b-48d7-ba4f-ab30c62f11a0'
+  location: 'West Europe'
+  machine_size: 'Standard_D2_v3'
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: windows2016
+    driver:
+      image_urn: MicrosoftWindowsServer:WindowsServer:2016-Datacenter-smalldisk:latest
+      vnet_id: /subscriptions/5c691912-139b-48d7-ba4f-ab30c62f11a0/resourceGroups/Core/providers/Microsoft.Network/virtualNetworks/btcds-vnet
+      subnet_id: btcds-default-vm-subnet
+      explicit_resource_group_name: chef-kitchen-claas
+      destroy_explicit_resource_group: false
+      destroy_resource_group_contents: true
+
+suites:
+  - name: default
+    run_list:
+      - recipe[jenkins-builder::git]

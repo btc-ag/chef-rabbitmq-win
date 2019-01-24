@@ -10,10 +10,20 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: chef-software.vsts-chef-tasks.vsts-chef-task-install-chefdk.vsts-chef-task-install-chefdk@1
+  displayName: 'Install ChefDK'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+
+- script: 'cookstyle .'
+  displayName: cookstyle
+  continueOnError: true
+
+- script: 'foodcritic .'
+  displayName: Foodcritic
+  continueOnError: true
+
+- task: chef-software.vsts-chef-tasks.vsts-chef-task-test-kitchen.vsts-chef-task-test-kitchen@1
+  displayName: 'Execute Test Kitchen: verify'
+  inputs:
+    tkAzureEndpoint: '5c691912-139b-48d7-ba4f-ab30c62f11a0'
+    tkKitchenFile: .kitchen.devops.yml
