@@ -25,5 +25,5 @@ steps:
 - task: chef-software.vsts-chef-tasks.vsts-chef-task-test-kitchen.vsts-chef-task-test-kitchen@1
   displayName: 'Execute Test Kitchen: verify'
   inputs:
-    tkAzureEndpoint: '5c691912-139b-48d7-ba4f-ab30c62f11a0'
+    tkAzureEndpoint: 'BOP-Infrastructure (5c691912-139b-48d7-ba4f-ab30c62f11a0)'
     tkKitchenFile: .kitchen.devops.yml
