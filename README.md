@@ -19,6 +19,7 @@ If the `base` variable is left empty, RabbitMQ will use a path in the users home
 The cookbook defines two resources, `rabbitmq_win_erlang` and `rabbit_mq_win`.
 
 Usage example to install RabbitMQ:
+
 ```ruby
 rabbitmq_win_erlang "21.2" do
   action :install
@@ -33,6 +34,7 @@ rabbitmq_win_plugin 'management'
 ```
 
 Example to remove a plugin
+
 ```ruby
 rabbitmq_win_plugin 'mqtt' do
   action :remove

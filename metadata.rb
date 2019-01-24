@@ -5,7 +5,7 @@ license 'MIT'
 description 'Installs/Configures rabbitmq and erlang on windows'
 long_description 'Install or Removed RabbitMQ and Erlang on Windows'
 version '1.0.0'
-chef_version '>= 14.0'
+chef_version '>= 14.7'
 supports 'windows'
 
 # The `issues_url` points to the location where issues for this cookbook are
