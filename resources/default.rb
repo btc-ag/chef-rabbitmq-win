@@ -11,9 +11,9 @@ action :install do
   end
 
   source_url = if property_is_set?(:source)
-                  new_resource.source
+                 new_resource.source
                else
-                  "https://github.com/rabbitmq/rabbitmq-server/releases/download/v#{new_resource.version}/rabbitmq-server-#{new_resource.version}.exe"
+                 "https://github.com/rabbitmq/rabbitmq-server/releases/download/v#{new_resource.version}/rabbitmq-server-#{new_resource.version}.exe"
                end
 
   windows_package "RabbitMQ Server #{new_resource.version}" do
