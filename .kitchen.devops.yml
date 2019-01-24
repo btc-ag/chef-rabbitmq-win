@@ -12,7 +12,6 @@ platforms:
   - name: windows2016
     driver:
       image_urn: MicrosoftWindowsServer:WindowsServer:2016-Datacenter-smalldisk:latest
-      explicit_resource_group_name: chef-kitchen-azure-devops
 
 suites:
   - name: default
