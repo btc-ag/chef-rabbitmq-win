@@ -4,7 +4,7 @@ maintainer_email 'bop-infra@btc-ag.com'
 license 'MIT'
 description 'Installs/Configures rabbitmq and erlang on windows'
 long_description 'Install or Removed RabbitMQ and Erlang on Windows'
-version '1.0.1'
+version IO.read(File.join(File.dirname(__FILE__), 'VERSION')).strip
 chef_version '>= 14.7'
 supports 'windows'
 
