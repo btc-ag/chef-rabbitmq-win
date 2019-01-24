@@ -21,7 +21,6 @@ steps:
   displayName: Foodcritic
   continueOnError: true
 
-steps:
 - task: chef-software.vsts-chef-tasks.vsts-chef-task-test-kitchen.vsts-chef-task-test-kitchen@1
   displayName: 'Execute Test Kitchen: test'
   inputs:
