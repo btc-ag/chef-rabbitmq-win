@@ -44,6 +44,7 @@ end
 ```
 
 Usage example to remove RabbitMQ:
+
 ```ruby
 rabbitmq_win "3.7.10" do
   action :remove
