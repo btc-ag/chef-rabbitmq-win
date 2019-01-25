@@ -56,4 +56,4 @@ steps:
   inputs:
     chefSupermarketEndpoint: 'chef-supermarket'
     chefCookbookName: 'rabbitmq-win'
-    chefCookbookPath: '$(Build.SourcesDirectory)/'
+    chefCookbookPath: '..'
