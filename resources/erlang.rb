@@ -19,6 +19,11 @@ action :install do
     options '/S'
   end
 
+  if major > 22
+    windows_env 'ERLANG_HOME' do
+      value "C:\\Program Files\\erl-#{new_resource.version}"
+    end
+  else 
   windows_env 'ERLANG_HOME' do
     value "C:\\Program Files\\erl#{erl_major}.#{minor}"
   end
