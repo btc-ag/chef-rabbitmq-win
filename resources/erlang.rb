@@ -1,12 +1,19 @@
 property :version, String, name_property: true
 property :source, String
+property :overrideErlangHome, String
+
 
 action :install do
   parts = new_resource.version.split('.')
   major = parts[0].to_i
   minor = parts[1].to_i
-  erl_major = major - 11
-
+  if major >= 22 and major < 23
+    erl_major = new_resource.version.to_i - 11.6
+  else 
+    erl_major = major - 11  
+  end 
+  pfad = ""
+ 
   source_url = if property_is_set?(:source)
                  new_resource.source
                else
@@ -18,15 +25,22 @@ action :install do
     installer_type :custom
     options '/S'
   end
-
-  if major > 22
-    windows_env 'ERLANG_HOME' do
-      value "C:\\Program Files\\erl-#{new_resource.version}"
-    end
-  else 
-  windows_env 'ERLANG_HOME' do
-    value "C:\\Program Files\\erl#{erl_major}.#{minor}"
+  
+  if new_resource.overrideErlangHome.nil?  
+      if major >= 22 and major < 23    
+        pfad = "C:\\Program Files\\erl#{erl_major}"
+      elsif major >= 23
+        pfad = "C:\\Program Files\\erl-#{new_resource.version}"
+      elsif major <=21 
+        pfad= "C:\\Program Files\\erl#{erl_major}.#{minor}"
+      end
+  else
+    pfad = new_resource.overrideErlangHome
   end
+  windows_env 'ERLANG_HOME' do
+    value pfad
+  end
+  
 end
 
 action :remove do
