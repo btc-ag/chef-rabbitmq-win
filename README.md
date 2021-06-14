@@ -1,6 +1,7 @@
 # RabbitMQ Windows cookbook
 
 [![Build Status](https://dev.azure.com/btcag-chef/chef/_apis/build/status/btc-ag.chef-rabbitmq-win?branchName=master)](https://dev.azure.com/btcag-chef/chef/_build/latest?definitionId=1?branchName=master)
+[![Cookbook version](https://img.shields.io/cookbook/v/rabbitmq-win.svg?style=flat)](https://supermarket.chef.io/cookbooks/rabbitmq-win)
 
 This cookbook can be used to install erlang and RabbitMQ on Windows nodes
 
