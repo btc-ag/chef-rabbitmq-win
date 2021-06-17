@@ -26,7 +26,7 @@ action :install do
   end
 
   if new_resource.overrideErlangHome.nil?
-    if (major >= 22) && (major < 23)
+    if (major == 22)
       pfad = "C:\\Program Files\\erl#{erl_major}"
     elsif major >= 23
       pfad = "C:\\Program Files\\erl-#{new_resource.version}"
