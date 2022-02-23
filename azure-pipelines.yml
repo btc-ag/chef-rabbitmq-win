@@ -11,7 +11,7 @@ variables:
   release.version:
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'Ubuntu Server 20.04 LTS'
 
 steps:
 - script: |
@@ -25,10 +25,6 @@ steps:
 
 - script: 'cookstyle .'
   displayName: cookstyle
-  continueOnError: true
-
-- script: 'foodcritic .'
-  displayName: Foodcritic
   continueOnError: true
 
 - task: GitHubRelease@0
