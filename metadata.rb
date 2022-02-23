@@ -3,7 +3,7 @@ maintainer 'BTC - BU-Operations Infrastructure Group'
 maintainer_email 'bop-infra@btc-ag.com'
 license 'MIT'
 description 'Installs/Configures rabbitmq and erlang on windows'
-version '1.1.0'
+version '1.1.1'
 chef_version '>= 14.7'
 supports 'windows'
 

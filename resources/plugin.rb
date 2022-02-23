@@ -1,3 +1,6 @@
+
+unified_mode true
+
 property :pluginName, String, name_property: true
 
 action :install do
