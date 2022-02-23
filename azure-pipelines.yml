@@ -11,7 +11,7 @@ variables:
   release.version:
 
 pool:
-  vmImage: 'Ubuntu Server 20.04 LTS'
+  vmImage: 'Ubuntu 20.04'
 
 steps:
 - script: |
